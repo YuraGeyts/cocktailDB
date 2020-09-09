@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FVm-D2-q9W">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cocktail Database-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CocktailDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neB-to-HTC">
+                                <rect key="frame" x="67" y="446" width="280" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Search cocktail by first letter"/>
+                                <connections>
+                                    <action selector="searchCocktailByFirstLetter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ue0-70-sqg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBy-Q8-b67">
+                                <rect key="frame" x="86" y="386" width="242" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Search cocktail by name"/>
+                                <connections>
+                                    <action selector="searchCocktailByName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kuf-rc-Nl9"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coctailsHeader" translatesAutoresizingMaskIntoConstraints="NO" id="PoI-dV-QEy">
+                                <rect key="frame" x="0.0" y="88" width="414" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PoI-dV-QEy" secondAttribute="height" multiplier="16:9" id="MZP-9v-BHs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dU-Bk-ege">
+                                <rect key="frame" x="107" y="506" width="200" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Get random cocktail"/>
+                                <connections>
+                                    <action selector="getRandomCocktail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W6s-iy-V7e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PoI-dV-QEy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gyo-Ie-bVD"/>
+                            <constraint firstItem="neB-to-HTC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HXb-6e-MRQ"/>
+                            <constraint firstItem="PoI-dV-QEy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MS7-au-27D"/>
+                            <constraint firstItem="gBy-Q8-b67" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cFc-bZ-83E"/>
+                            <constraint firstItem="PoI-dV-QEy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h7l-IT-DZD"/>
+                            <constraint firstItem="gBy-Q8-b67" firstAttribute="top" secondItem="PoI-dV-QEy" secondAttribute="bottom" constant="65" id="i2b-6a-1DW"/>
+                            <constraint firstItem="4dU-Bk-ege" firstAttribute="top" secondItem="neB-to-HTC" secondAttribute="bottom" constant="20" id="krn-CV-Kf3"/>
+                            <constraint firstItem="neB-to-HTC" firstAttribute="top" secondItem="gBy-Q8-b67" secondAttribute="bottom" constant="20" id="qMm-Nd-hPp"/>
+                            <constraint firstItem="4dU-Bk-ege" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wqe-Ml-VNV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cocktail Database" id="rlt-Y5-SGP"/>
+                    <connections>
+                        <segue destination="yQC-ha-rHl" kind="show" id="cSv-k6-R46"/>
+                        <segue destination="hdt-S6-FZK" kind="show" id="TtU-tM-iWA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="128.57142857142856"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="u6E-QV-1lo">
+            <objects>
+                <tableViewController id="yQC-ha-rHl" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IqA-q7-yni">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8zR-Tm-37A">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8zR-Tm-37A" id="mwx-UJ-lc8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yQC-ha-rHl" id="bAP-Un-Jer"/>
+                            <outlet property="delegate" destination="yQC-ha-rHl" id="X4g-hz-SFZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Sph-7a-FXY"/>
+                    <connections>
+                        <segue destination="hdt-S6-FZK" kind="show" id="hpo-QD-QKq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AHu-vY-Uby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="-426"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dLY-r5-jx5">
+            <objects>
+                <viewController id="hdt-S6-FZK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zQs-Jf-Bgk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QN6-1Y-aV7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bJs-Q3-A47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sym-Wf-LzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2665" y="129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tk2-Vf-jjw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FVm-D2-q9W" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vVs-Px-pVj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GD1-Oc-gm3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jy3-WB-3o5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hpo-QD-QKq"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="coctailsHeader" width="1280" height="720"/>
+    </resources>
+</document>
