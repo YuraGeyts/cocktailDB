@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct CurrentCocktail {
-    let drinks: [[String : String?]]
+struct AllCocktails {
+    var drinks: [Drink]
     
-    init?(currentCocktailData: CurrentCocktailData) {
-        drinks = currentCocktailData.drinks
+    init?(responseCocktailData: ResponseCocktailData) {
+        drinks = responseCocktailData.drinks
     }
     
     

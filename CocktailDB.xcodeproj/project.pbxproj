@@ -15,8 +15,8 @@
 		3A49F9402508F7330030B451 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A49F93E2508F7330030B451 /* LaunchScreen.storyboard */; };
 		3A49F94D2508F9390030B451 /* CocktailNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49F94C2508F9390030B451 /* CocktailNetworkManager.swift */; };
 		3A49F9502508F95F0030B451 /* ViewController+AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49F94F2508F95F0030B451 /* ViewController+AlertController.swift */; };
-		3A49F9522508FBDA0030B451 /* CurrentCocktailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49F9512508FBDA0030B451 /* CurrentCocktailData.swift */; };
-		3A49F9542508FF620030B451 /* CurrentCocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49F9532508FF620030B451 /* CurrentCocktail.swift */; };
+		3A49F9522508FBDA0030B451 /* ResponseCocktailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49F9512508FBDA0030B451 /* ResponseCocktailData.swift */; };
+		3A49F9542508FF620030B451 /* AllCocktails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A49F9532508FF620030B451 /* AllCocktails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		3A49F9412508F7330030B451 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A49F94C2508F9390030B451 /* CocktailNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailNetworkManager.swift; sourceTree = "<group>"; };
 		3A49F94F2508F95F0030B451 /* ViewController+AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+AlertController.swift"; sourceTree = "<group>"; };
-		3A49F9512508FBDA0030B451 /* CurrentCocktailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCocktailData.swift; sourceTree = "<group>"; };
-		3A49F9532508FF620030B451 /* CurrentCocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCocktail.swift; sourceTree = "<group>"; };
+		3A49F9512508FBDA0030B451 /* ResponseCocktailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCocktailData.swift; sourceTree = "<group>"; };
+		3A49F9532508FF620030B451 /* AllCocktails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCocktails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				3A49F94C2508F9390030B451 /* CocktailNetworkManager.swift */,
-				3A49F9532508FF620030B451 /* CurrentCocktail.swift */,
-				3A49F9512508FBDA0030B451 /* CurrentCocktailData.swift */,
+				3A49F9532508FF620030B451 /* AllCocktails.swift */,
+				3A49F9512508FBDA0030B451 /* ResponseCocktailData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,9 +202,9 @@
 				3A49F9382508F7320030B451 /* ViewController.swift in Sources */,
 				3A49F9342508F7320030B451 /* AppDelegate.swift in Sources */,
 				3A49F94D2508F9390030B451 /* CocktailNetworkManager.swift in Sources */,
-				3A49F9542508FF620030B451 /* CurrentCocktail.swift in Sources */,
+				3A49F9542508FF620030B451 /* AllCocktails.swift in Sources */,
 				3A49F9362508F7320030B451 /* SceneDelegate.swift in Sources */,
-				3A49F9522508FBDA0030B451 /* CurrentCocktailData.swift in Sources */,
+				3A49F9522508FBDA0030B451 /* ResponseCocktailData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

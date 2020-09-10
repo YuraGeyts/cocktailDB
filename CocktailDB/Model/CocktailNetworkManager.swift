@@ -15,20 +15,20 @@ class CocktailNetworkManager {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, responce, error in
             if let data = data {
-                if let currentCocktail = self.parseJSON(withData: data) {
-                    print(currentCocktail)
+                if let allCocktails = self.parseJSON(withData: data) {
+                    print(allCocktails.drinks)
                 }
             }
         }
         task.resume()
     }
     
-    fileprivate func parseJSON(withData data: Data) -> CurrentCocktail? {
+    fileprivate func parseJSON(withData data: Data) -> AllCocktails? {
         let decoder = JSONDecoder()
         do {
-            let currentCocktailData = try decoder.decode(CurrentCocktailData.self, from: data)
-            guard let currentCocktail = CurrentCocktail(currentCocktailData: currentCocktailData) else { return nil }
-            return currentCocktail
+            let responseCocktailData = try decoder.decode(ResponseCocktailData.self, from: data)
+            guard let allCocktails = AllCocktails(responseCocktailData: responseCocktailData) else { return nil }
+            return allCocktails
             
         } catch let error as NSError {
             print(error.localizedDescription)

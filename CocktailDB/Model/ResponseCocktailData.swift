@@ -8,6 +8,12 @@
 
 import Foundation
 
-struct CurrentCocktailData: Codable {
-    let drinks: [[String : String?]]
+struct ResponseCocktailData: Codable {
+    var drinks: [Drink]
+}
+
+struct Drink: Codable {
+    var strDrink: String
+    var strDrinkThumb: String
+    var idDrink: String
 }
