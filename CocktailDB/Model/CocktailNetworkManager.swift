@@ -10,13 +10,15 @@ import Foundation
 
 class CocktailNetworkManager {
     
+    var onCompletion: ((AllCocktails) -> Void)?
+    
     func performRequest(withURLString urlString: String) {
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, responce, error in
             if let data = data {
                 if let allCocktails = self.parseJSON(withData: data) {
-                    print(allCocktails.drinks)
+                    self.onCompletion?(allCocktails)
                 }
             }
         }

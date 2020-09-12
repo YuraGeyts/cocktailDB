@@ -17,7 +17,8 @@ extension ViewController {
             let textField = alertController.textFields?.first
             guard let text = textField?.text else { return }
             if text != "" {
-                complitionHandler(text)
+                let enteredText = text.split(separator: " ").joined(separator: "%20")
+                complitionHandler(enteredText)
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)

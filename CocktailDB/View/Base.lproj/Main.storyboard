@@ -62,30 +62,80 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cocktail Database" id="rlt-Y5-SGP"/>
                     <connections>
-                        <segue destination="yQC-ha-rHl" kind="show" id="cSv-k6-R46"/>
-                        <segue destination="hdt-S6-FZK" kind="show" id="TtU-tM-iWA"/>
+                        <segue destination="yQC-ha-rHl" kind="show" identifier="searchSegue" id="cSv-k6-R46"/>
+                        <segue destination="hdt-S6-FZK" kind="show" identifier="randomCocktail" id="TtU-tM-iWA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="128.57142857142856"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Cocktail List Table View Controller-->
         <scene sceneID="u6E-QV-1lo">
             <objects>
-                <tableViewController id="yQC-ha-rHl" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IqA-q7-yni">
+                <tableViewController id="yQC-ha-rHl" customClass="CocktailListTableViewController" customModule="CocktailDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IqA-q7-yni">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8zR-Tm-37A">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cocktailCell" rowHeight="100" id="8zR-Tm-37A" customClass="CocktailTableViewCell" customModule="CocktailDB" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8zR-Tm-37A" id="mwx-UJ-lc8">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RIv-NU-5Ag">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-MQ-GEd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="DW4-MQ-GEd" secondAttribute="height" multiplier="1:1" id="kkD-Rm-Red"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="PII-wd-AFQ">
+                                                    <rect key="frame" x="108" y="11" width="306" height="78"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re3-kD-UUe">
+                                                            <rect key="frame" x="0.0" y="0.0" width="153.5" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q83-R2-dYw">
+                                                            <rect key="frame" x="0.0" y="54" width="48" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PII-wd-AFQ" firstAttribute="leading" secondItem="DW4-MQ-GEd" secondAttribute="trailing" constant="8" id="BFd-ew-lrH"/>
+                                                <constraint firstItem="DW4-MQ-GEd" firstAttribute="leading" secondItem="RIv-NU-5Ag" secondAttribute="leading" id="MEG-re-3UJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="PII-wd-AFQ" secondAttribute="trailing" id="SBC-6W-m3b"/>
+                                                <constraint firstAttribute="bottom" secondItem="DW4-MQ-GEd" secondAttribute="bottom" id="TZB-gu-hU2"/>
+                                                <constraint firstAttribute="bottom" secondItem="PII-wd-AFQ" secondAttribute="bottom" constant="11" id="gVt-RQ-C5b"/>
+                                                <constraint firstItem="DW4-MQ-GEd" firstAttribute="top" secondItem="RIv-NU-5Ag" secondAttribute="top" id="vVQ-kM-aHc"/>
+                                                <constraint firstItem="PII-wd-AFQ" firstAttribute="top" secondItem="RIv-NU-5Ag" secondAttribute="top" constant="11" id="wea-iX-5pP"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RIv-NU-5Ag" firstAttribute="top" secondItem="mwx-UJ-lc8" secondAttribute="top" id="44k-jU-mLa"/>
+                                        <constraint firstAttribute="trailing" secondItem="RIv-NU-5Ag" secondAttribute="trailing" id="Dfd-50-UvU"/>
+                                        <constraint firstItem="RIv-NU-5Ag" firstAttribute="leading" secondItem="mwx-UJ-lc8" secondAttribute="leading" id="Hlw-HI-RZg"/>
+                                        <constraint firstAttribute="bottom" secondItem="RIv-NU-5Ag" secondAttribute="bottom" id="dfN-b0-afC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cocktailImageView" destination="DW4-MQ-GEd" id="csy-ar-Uao"/>
+                                    <outlet property="cocktailNameLabel" destination="Re3-kD-UUe" id="MrT-IF-6Ij"/>
+                                    <outlet property="isAlcoholicLabel" destination="Q83-R2-dYw" id="3pI-RY-cfk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -95,28 +145,77 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Sph-7a-FXY"/>
                     <connections>
-                        <segue destination="hdt-S6-FZK" kind="show" id="hpo-QD-QKq"/>
+                        <segue destination="hdt-S6-FZK" kind="show" identifier="selectedCocktail" id="hpo-QD-QKq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHu-vY-Uby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1855" y="-426"/>
+            <point key="canvasLocation" x="1853.6231884057972" y="-426.5625"/>
         </scene>
-        <!--View Controller-->
+        <!--Cocktail Info View Controller-->
         <scene sceneID="dLY-r5-jx5">
             <objects>
-                <viewController id="hdt-S6-FZK" sceneMemberID="viewController">
+                <viewController id="hdt-S6-FZK" customClass="CocktailInfoViewController" customModule="CocktailDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zQs-Jf-Bgk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HG-8g-oB9">
+                                <rect key="frame" x="109.5" y="329" width="195.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S1F-rL-gGH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="S1F-rL-gGH" secondAttribute="height" multiplier="16:9" id="os7-Nw-3Cl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="isAlcoholic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LZ-yJ-9Sl">
+                                <rect key="frame" x="159.5" y="375.5" width="95" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QHk-m8-Nfz">
+                                <rect key="frame" x="20" y="407.5" width="374" height="454.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QHk-m8-Nfz" firstAttribute="leading" secondItem="QN6-1Y-aV7" secondAttribute="leading" constant="20" id="2cU-he-8rn"/>
+                            <constraint firstItem="S1F-rL-gGH" firstAttribute="leading" secondItem="QN6-1Y-aV7" secondAttribute="leading" id="4A9-v6-FV6"/>
+                            <constraint firstItem="QHk-m8-Nfz" firstAttribute="top" secondItem="3LZ-yJ-9Sl" secondAttribute="bottom" constant="8" id="4oh-iD-mt5"/>
+                            <constraint firstItem="QN6-1Y-aV7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9HG-8g-oB9" secondAttribute="trailing" id="CmJ-0p-aUf"/>
+                            <constraint firstItem="S1F-rL-gGH" firstAttribute="top" secondItem="QN6-1Y-aV7" secondAttribute="top" id="FbZ-qz-5tg"/>
+                            <constraint firstItem="9HG-8g-oB9" firstAttribute="centerX" secondItem="QN6-1Y-aV7" secondAttribute="centerX" id="Jpl-c4-W3e"/>
+                            <constraint firstItem="9HG-8g-oB9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QN6-1Y-aV7" secondAttribute="leading" id="NyW-dT-FRx"/>
+                            <constraint firstItem="QN6-1Y-aV7" firstAttribute="trailing" secondItem="QHk-m8-Nfz" secondAttribute="trailing" constant="20" id="Y4J-JX-xl0"/>
+                            <constraint firstItem="3LZ-yJ-9Sl" firstAttribute="centerX" secondItem="QN6-1Y-aV7" secondAttribute="centerX" id="Zb9-5S-jlY"/>
+                            <constraint firstItem="QHk-m8-Nfz" firstAttribute="bottom" secondItem="QN6-1Y-aV7" secondAttribute="bottom" id="fJM-xE-k3h"/>
+                            <constraint firstItem="S1F-rL-gGH" firstAttribute="trailing" secondItem="QN6-1Y-aV7" secondAttribute="trailing" id="kH8-vt-o7E"/>
+                            <constraint firstItem="9HG-8g-oB9" firstAttribute="top" secondItem="S1F-rL-gGH" secondAttribute="bottom" constant="8" id="lgY-ha-wPt"/>
+                            <constraint firstItem="3LZ-yJ-9Sl" firstAttribute="top" secondItem="9HG-8g-oB9" secondAttribute="bottom" constant="8" id="vWq-C6-Zcw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QN6-1Y-aV7"/>
                     </view>
                     <navigationItem key="navigationItem" id="bJs-Q3-A47"/>
+                    <connections>
+                        <outlet property="cocktailImageView" destination="S1F-rL-gGH" id="8YD-sk-FcW"/>
+                        <outlet property="cocktailNameLabel" destination="9HG-8g-oB9" id="OPm-bb-fnh"/>
+                        <outlet property="isAlcoholicLabel" destination="3LZ-yJ-9Sl" id="LDj-p0-HMc"/>
+                        <outlet property="recipeTextView" destination="QHk-m8-Nfz" id="3Xa-Om-sW2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sym-Wf-LzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2665" y="129"/>
+            <point key="canvasLocation" x="2662.3188405797105" y="128.57142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tk2-Vf-jjw">

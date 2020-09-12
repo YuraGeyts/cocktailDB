@@ -13,7 +13,17 @@ struct ResponseCocktailData: Codable {
 }
 
 struct Drink: Codable {
-    var strDrink: String
-    var strDrinkThumb: String
-    var idDrink: String
+    var cocktailName: String
+    var cocktailImageURL: String
+    var cocktailID: String
+    var cocktailIsAlcoholic: String
+    var cocktailRecipe: String
+    
+    enum CodingKeys: String, CodingKey {
+        case cocktailName = "strDrink"
+        case cocktailImageURL = "strDrinkThumb"
+        case cocktailID = "idDrink"
+        case cocktailIsAlcoholic = "strAlcoholic"
+        case cocktailRecipe = "strInstructions"
+    }
 }
