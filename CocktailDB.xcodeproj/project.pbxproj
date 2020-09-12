@@ -21,6 +21,7 @@
 		3AC7CBE5250B62930039EF2A /* CocktailListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CBE4250B62930039EF2A /* CocktailListTableViewController.swift */; };
 		3AC7CBE7250B649A0039EF2A /* CocktailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CBE6250B649A0039EF2A /* CocktailTableViewCell.swift */; };
 		3AC7CBE9250CF67B0039EF2A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CBE8250CF67B0039EF2A /* ImageDownloader.swift */; };
+		3AC7CBEB250D02E80039EF2A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7CBEA250D02E80039EF2A /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3AC7CBE4250B62930039EF2A /* CocktailListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListTableViewController.swift; sourceTree = "<group>"; };
 		3AC7CBE6250B649A0039EF2A /* CocktailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTableViewCell.swift; sourceTree = "<group>"; };
 		3AC7CBE8250CF67B0039EF2A /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		3AC7CBEA250D02E80039EF2A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		3A49F9272508F7320030B451 = {
 			isa = PBXGroup;
 			children = (
+				3AC7CBEA250D02E80039EF2A /* .gitignore */,
 				3A49F9322508F7320030B451 /* CocktailDB */,
 				3A49F9312508F7320030B451 /* Products */,
 			);
@@ -197,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AC7CBEB250D02E80039EF2A /* .gitignore in Resources */,
 				3A49F9402508F7330030B451 /* LaunchScreen.storyboard in Resources */,
 				3A49F93D2508F7330030B451 /* Assets.xcassets in Resources */,
 				3A49F93B2508F7320030B451 /* Main.storyboard in Resources */,
