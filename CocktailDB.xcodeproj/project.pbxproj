@@ -22,6 +22,7 @@
 		3AC7CBE7250B649A0039EF2A /* CocktailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CBE6250B649A0039EF2A /* CocktailTableViewCell.swift */; };
 		3AC7CBE9250CF67B0039EF2A /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CBE8250CF67B0039EF2A /* ImageDownloader.swift */; };
 		3AC7CBEB250D02E80039EF2A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7CBEA250D02E80039EF2A /* .gitignore */; };
+		3AC7CC28250FDE100039EF2A /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7CC27250FDE100039EF2A /* Cocktail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3AC7CBE6250B649A0039EF2A /* CocktailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTableViewCell.swift; sourceTree = "<group>"; };
 		3AC7CBE8250CF67B0039EF2A /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		3AC7CBEA250D02E80039EF2A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3AC7CC27250FDE100039EF2A /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		3A49F9322508F7320030B451 /* CocktailDB */ = {
 			isa = PBXGroup;
 			children = (
+				3AC7CC26250FDD8C0039EF2A /* Managers */,
 				3A49F94E2508F9430030B451 /* Extensions */,
 				3A49F94B2508F7980030B451 /* Model */,
 				3A49F9482508F74A0030B451 /* View */,
@@ -88,9 +91,7 @@
 		3A49F9472508F7400030B451 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3AC7CBE8250CF67B0039EF2A /* ImageDownloader.swift */,
 				3A49F9372508F7320030B451 /* ViewController.swift */,
-				3AC7CBE6250B649A0039EF2A /* CocktailTableViewCell.swift */,
 				3AC7CBE4250B62930039EF2A /* CocktailListTableViewController.swift */,
 				3AC7CBE0250A69B50039EF2A /* CocktailInfoViewController.swift */,
 			);
@@ -102,6 +103,7 @@
 			children = (
 				3A49F9392508F7320030B451 /* Main.storyboard */,
 				3A49F93E2508F7330030B451 /* LaunchScreen.storyboard */,
+				3AC7CBE6250B649A0039EF2A /* CocktailTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,9 +129,9 @@
 		3A49F94B2508F7980030B451 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3A49F94C2508F9390030B451 /* CocktailNetworkManager.swift */,
+				3AC7CC29250FE1600039EF2A /* Responses */,
 				3A49F9532508FF620030B451 /* AllCocktails.swift */,
-				3A49F9512508FBDA0030B451 /* ResponseCocktailData.swift */,
+				3AC7CC27250FDE100039EF2A /* Cocktail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +142,23 @@
 				3A49F94F2508F95F0030B451 /* ViewController+AlertController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AC7CC26250FDD8C0039EF2A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7CBE8250CF67B0039EF2A /* ImageDownloader.swift */,
+				3A49F94C2508F9390030B451 /* CocktailNetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3AC7CC29250FE1600039EF2A /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				3A49F9512508FBDA0030B451 /* ResponseCocktailData.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +243,7 @@
 				3A49F94D2508F9390030B451 /* CocktailNetworkManager.swift in Sources */,
 				3A49F9542508FF620030B451 /* AllCocktails.swift in Sources */,
 				3A49F9362508F7320030B451 /* SceneDelegate.swift in Sources */,
+				3AC7CC28250FDE100039EF2A /* Cocktail.swift in Sources */,
 				3A49F9522508FBDA0030B451 /* ResponseCocktailData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

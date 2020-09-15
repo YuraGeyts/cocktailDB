@@ -9,9 +9,9 @@
 import Foundation
 
 struct AllCocktails {
-    let cocktails: [Drink]
+    let cocktails: [Cocktail]
     
     init?(responseCocktailData: ResponseCocktailData) {
-        cocktails = responseCocktailData.drinks
+        cocktails = responseCocktailData.cocktails
     }
 }

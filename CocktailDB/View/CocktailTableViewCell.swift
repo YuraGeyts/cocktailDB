@@ -13,10 +13,10 @@ class CocktailTableViewCell: UITableViewCell {
     @IBOutlet weak var cocktailImageView: UIImageView!
     @IBOutlet weak var cocktailNameLabel: UILabel!
     @IBOutlet weak var isAlcoholicLabel: UILabel!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+
+    func configureCell(with cocktail: Cocktail) {
+        ImageDownloader.shared.downloadImage(from: cocktail.cocktailImageURL, imageView: cocktailImageView)
+        cocktailNameLabel.text = cocktail.cocktailName
+        isAlcoholicLabel.text = cocktail.cocktailIsAlcoholic
     }
 }

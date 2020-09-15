@@ -14,9 +14,10 @@ class CocktailInfoViewController: UIViewController {
     @IBOutlet weak var cocktailNameLabel: UILabel!
     @IBOutlet weak var isAlcoholicLabel: UILabel!
     @IBOutlet weak var recipeTextView: UITextView!
-    let imageDownloader = ImageDownloader()
+    @IBOutlet weak var glassLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
-    var currentCocktail: Drink?
+    var currentCocktail: Cocktail?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,24 +25,12 @@ class CocktailInfoViewController: UIViewController {
         updateInterface(cocktail: drink)
     }
     
-    func updateInterface(cocktail: Drink) {
-        guard let url = URL(string: cocktail.cocktailImageURL) else { return }
-        imageDownloader.downloadImage(from: url, imageView: self.cocktailImageView)
+    func updateInterface(cocktail: Cocktail) {
+        ImageDownloader.shared.downloadImage(from: cocktail.cocktailImageURL, imageView: self.cocktailImageView)
         self.cocktailNameLabel.text = cocktail.cocktailName
         self.isAlcoholicLabel.text = cocktail.cocktailIsAlcoholic
         self.recipeTextView.text = cocktail.cocktailRecipe
-        
+        self.glassLabel.text = cocktail.cocktailGlass
+        self.categoryLabel.text = cocktail.cocktailCategory
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
 }

@@ -9,8 +9,10 @@
 import Foundation
 
 class CocktailNetworkManager {
+    private init(){}
+    static let shared = CocktailNetworkManager()
     
-    var onCompletion: ((AllCocktails) -> Void)?
+    var onCompletion: ((AllCocktails) -> ())?
     
     func performRequest(withURLString urlString: String) {
         guard let url = URL(string: urlString) else { return }
