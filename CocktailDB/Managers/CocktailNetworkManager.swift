@@ -30,9 +30,8 @@ class CocktailNetworkManager {
     fileprivate func parseJSON(withData data: Data) -> AllCocktails? {
         let decoder = JSONDecoder()
         do {
-            let responseCocktailData = try decoder.decode(ResponseCocktailData.self, from: data)
-            guard let allCocktails = AllCocktails(responseCocktailData: responseCocktailData) else { return nil }
-            return allCocktails
+            let responseCocktailData = try decoder.decode(AllCocktails.self, from: data)
+            return responseCocktailData
             
         } catch let error as NSError {
             print(error.localizedDescription)

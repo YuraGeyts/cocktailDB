@@ -1,12 +1,20 @@
 //
-//  Drink.swift
+//  CocktailModel.swift
 //  CocktailDB
 //
-//  Created by Yura Geyts on 14.09.2020.
+//  Created by Yura Geyts on 29.10.2020.
 //  Copyright © 2020 Yura Geyts. All rights reserved.
 //
 
 import Foundation
+
+struct AllCocktails: Codable {
+    var cocktails: [Cocktail]
+    
+    enum CodingKeys: String, CodingKey {
+        case cocktails = "drinks"
+    }
+}
 
 struct Cocktail: Codable {
     var cocktailName: String
